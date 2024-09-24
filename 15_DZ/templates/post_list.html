@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Мой блог</title> 
+</head>
+<body>
+    <h1>Записи блога</h1>
+    {% for post in posts %}
+        <article>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.content|truncatewords:30 }}</p>
+            <p>Опубликовано: {{ post.created_at }}</p>
+        </article>
+    {% empty %}
+        <p>Пока нет записей в блоге.</p>
+    {% endfor %}
+</body>
+</html>
+
